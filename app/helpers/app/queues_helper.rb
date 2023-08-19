@@ -1,0 +1,2 @@
+module App::QueuesHelper
+end

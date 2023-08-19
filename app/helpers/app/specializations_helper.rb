@@ -1,0 +1,2 @@
+module App::SpecializationsHelper
+end
