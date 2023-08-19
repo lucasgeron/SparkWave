@@ -65,6 +65,6 @@ class App::QueuesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def app_queue_params
-      params.require(:app_queue).permit(:workspace_id, :type)
+      params.require(:app_queue).permit(:workspace_id, :category)
     end
 end

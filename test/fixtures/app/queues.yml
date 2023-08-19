@@ -2,8 +2,8 @@
 
 one:
   workspace: one
-  type: 
+  category: MyString
 
 two:
   workspace: two
-  type: 
+  category: MyString

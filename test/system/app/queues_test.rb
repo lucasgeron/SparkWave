@@ -14,7 +14,7 @@ class App::QueuesTest < ApplicationSystemTestCase
     visit app_queues_url
     click_on "New queue"
 
-    fill_in "Type", with: @app_queue.type
+    fill_in "Category", with: @app_queue.category
     fill_in "Workspace", with: @app_queue.workspace_id
     click_on "Create Queue"
 
@@ -26,7 +26,7 @@ class App::QueuesTest < ApplicationSystemTestCase
     visit app_queue_url(@app_queue)
     click_on "Edit this queue", match: :first
 
-    fill_in "Type", with: @app_queue.type
+    fill_in "Category", with: @app_queue.category
     fill_in "Workspace", with: @app_queue.workspace_id
     click_on "Update Queue"
 

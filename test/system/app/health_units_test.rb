@@ -15,11 +15,11 @@ class App::HealthUnitsTest < ApplicationSystemTestCase
     click_on "New health unit"
 
     fill_in "Address", with: @app_health_unit.address
+    fill_in "Category", with: @app_health_unit.category
     fill_in "City", with: @app_health_unit.city
     fill_in "Name", with: @app_health_unit.name
     fill_in "Phone", with: @app_health_unit.phone
     fill_in "Token", with: @app_health_unit.token
-    fill_in "Type", with: @app_health_unit.type
     click_on "Create Health unit"
 
     assert_text "Health unit was successfully created"
@@ -31,11 +31,11 @@ class App::HealthUnitsTest < ApplicationSystemTestCase
     click_on "Edit this health unit", match: :first
 
     fill_in "Address", with: @app_health_unit.address
+    fill_in "Category", with: @app_health_unit.category
     fill_in "City", with: @app_health_unit.city
     fill_in "Name", with: @app_health_unit.name
     fill_in "Phone", with: @app_health_unit.phone
     fill_in "Token", with: @app_health_unit.token
-    fill_in "Type", with: @app_health_unit.type
     click_on "Update Health unit"
 
     assert_text "Health unit was successfully updated"

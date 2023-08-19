@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_19_173858) do
     t.string "city"
     t.string "address"
     t.string "phone"
-    t.string "type"
+    t.string "category"
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_19_173858) do
 
   create_table "app_queues", force: :cascade do |t|
     t.bigint "workspace_id", null: false
-    t.string "type"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["workspace_id"], name: "index_app_queues_on_workspace_id"

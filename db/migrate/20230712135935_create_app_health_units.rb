@@ -5,7 +5,7 @@ class CreateAppHealthUnits < ActiveRecord::Migration[7.0]
       t.string :city
       t.string :address
       t.string :phone
-      t.string :type
+      t.string :category
       t.string :token
 
       t.timestamps

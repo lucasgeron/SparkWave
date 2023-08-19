@@ -17,7 +17,7 @@ class App::QueuesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create app_queue" do
     assert_difference("App::Queue.count") do
-      post app_queues_url, params: { app_queue: { type: @app_queue.type, workspace_id: @app_queue.workspace_id } }
+      post app_queues_url, params: { app_queue: { category: @app_queue.category, workspace_id: @app_queue.workspace_id } }
     end
 
     assert_redirected_to app_queue_url(App::Queue.last)
@@ -34,7 +34,7 @@ class App::QueuesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update app_queue" do
-    patch app_queue_url(@app_queue), params: { app_queue: { type: @app_queue.type, workspace_id: @app_queue.workspace_id } }
+    patch app_queue_url(@app_queue), params: { app_queue: { category: @app_queue.category, workspace_id: @app_queue.workspace_id } }
     assert_redirected_to app_queue_url(@app_queue)
   end
 

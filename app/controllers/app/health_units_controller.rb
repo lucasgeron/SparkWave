@@ -65,6 +65,6 @@ class App::HealthUnitsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def app_health_unit_params
-      params.require(:app_health_unit).permit(:name, :city, :address, :phone, :type, :token)
+      params.require(:app_health_unit).permit(:name, :city, :address, :phone, :category, :token)
     end
 end

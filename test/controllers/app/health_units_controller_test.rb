@@ -17,7 +17,7 @@ class App::HealthUnitsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create app_health_unit" do
     assert_difference("App::HealthUnit.count") do
-      post app_health_units_url, params: { app_health_unit: { address: @app_health_unit.address, city: @app_health_unit.city, name: @app_health_unit.name, phone: @app_health_unit.phone, token: @app_health_unit.token, type: @app_health_unit.type } }
+      post app_health_units_url, params: { app_health_unit: { address: @app_health_unit.address, category: @app_health_unit.category, city: @app_health_unit.city, name: @app_health_unit.name, phone: @app_health_unit.phone, token: @app_health_unit.token } }
     end
 
     assert_redirected_to app_health_unit_url(App::HealthUnit.last)
@@ -34,7 +34,7 @@ class App::HealthUnitsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update app_health_unit" do
-    patch app_health_unit_url(@app_health_unit), params: { app_health_unit: { address: @app_health_unit.address, city: @app_health_unit.city, name: @app_health_unit.name, phone: @app_health_unit.phone, token: @app_health_unit.token, type: @app_health_unit.type } }
+    patch app_health_unit_url(@app_health_unit), params: { app_health_unit: { address: @app_health_unit.address, category: @app_health_unit.category, city: @app_health_unit.city, name: @app_health_unit.name, phone: @app_health_unit.phone, token: @app_health_unit.token } }
     assert_redirected_to app_health_unit_url(@app_health_unit)
   end
 

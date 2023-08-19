@@ -6,7 +6,7 @@
 
   <% if action_name != "show" %>
     <%= link_to "Show this health insurance", health_insurance, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this health insurance', edit_health_insurance_path(health_insurance), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this health insurance', edit_app_health_insurance_path(health_insurance), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
   <% end %>
 </div>
