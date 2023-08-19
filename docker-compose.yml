@@ -4,7 +4,7 @@ x-app: &app
     context: .
     dockerfile: Dockerfile
   volumes:
-    - .:/var/www/rails_app
+    - .:/var/www/SparkWave
     - bundle_path:/bundle
   tmpfs:
     - /tmp
@@ -57,7 +57,7 @@ services:
   selenium:
     image: selenium/standalone-chrome-debug:latest
     volumes:
-      - ./test/samples:/var/www/rails_app/test/samples
+      - ./test/samples:/var/www/SparkWave/test/samples
       - /dev/shm:/dev/shm
     ports:
       - 4444:4444

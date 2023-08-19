@@ -102,7 +102,7 @@ RUN npm -v
 RUN npm install -g yarn
 
 # Define environment variables
-ENV APP_NAME rails_app
+ENV APP_NAME SparkWave
 ENV _USER linux
 ENV HOME /home/${_USER}
 ENV APP /var/www/${APP_NAME}
