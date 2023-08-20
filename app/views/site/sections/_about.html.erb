@@ -4,7 +4,11 @@
 
     <div class="grid space-y-4 ">
       <%# about.title %>
-      <h2 data-aos="zoom-in" class="title"><%= t('views.site.about.title')%></h2>
+      <div data-aos="zoom-in" class="flex justify-start items-center">
+        <%= image_tag('favicon.ico', class: 'h-8  -mr-3', alt: 'Logo') %>
+        <%= image_tag('favtext-white.svg', class: ' h-10  hidden dark:inline', alt: 'Logotext') %>
+        <%= image_tag('favtext-dark.svg', class: ' h-10  inline dark:hidden', alt: 'Logotext') %>   
+      </div>
       <%# about.description %>
       <p data-aos="zoom-in" data-aos-delay="50" class="description "><%= t('views.site.about.description')%></p>
       <%# about.note %>
@@ -12,9 +16,9 @@
     </div>
   
     <div class="grid grid-cols-2 gap-4 my-8 md:mt-0">
-      <img data-aos="zoom-in" data-aos-delay="50" data-aos-duration='700' class="about_aos_trigger w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
-      <img data-aos="zoom-in" data-aos-delay="50" data-aos-duration='700' class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
-    </div>
+      <%= image_tag('banner_01', class:'about_aos_trigger w-full rounded-lg', data: {aos:'zoom-in', aos_delay:50, aos_duration:700})%>
+      <%= image_tag('banner_02', class:'mt-4 w-full lg:mt-10 rounded-lg', data: {aos:'zoom-in', aos_delay:50, aos_duration:700})%>
+      </div>
   
     <p data-aos="zoom-in" data-aos-delay="50" data-aos-anchor=".about_aos_trigger" class="description lg:hidden"><%= t('views.site.about.note')%></p>
 

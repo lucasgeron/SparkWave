@@ -9,7 +9,7 @@
 
   <% @app_health_units.each do |health_unit| %>
     <%= link_to   health_unit.name,  health_unit, class:'font-bold text-2xl' %>
-    <div class="default-grid">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 2xl:grid-cols-3 gap-4 my-4">
       <%= render @app_queues.where(health_unit:  health_unit) %>
     </div>
   <%end%>

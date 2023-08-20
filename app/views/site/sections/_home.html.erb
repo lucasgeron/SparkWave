@@ -1,10 +1,14 @@
-<section id="home" data-navigation-target="home_sec" class=" h-screen  grid place-items-center -mt-16 sm:-mt-0"  >
+<section id="home" data-navigation-target="home_sec" class=" h-[90vh] grid place-items-center "  >
   <div class="inner-section-default     md:grid lg:grid-cols-2 items-center default-gap">
 
     <%# IMAGE BASED ON THEME %>
-    <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
-    <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
-    
+    <%= link_to app_queues_path  do %>
+    <div class="w-full " data-aos="zoom-in" >
+    <%= image_tag('favicon.svg', class: 'w-auto mx-auto h-48 md:h-auto md:max-h-80 my-10 animate-breathe', alt: 'Logotext') %>
+    <%= image_tag('favtext-white.svg', class: 'w-auto h-10 mx-auto hidden dark:block', alt: 'Logotext') %>
+    <%= image_tag('favtext-dark.svg', class: 'w-auto  h-10 mx-auto block dark:hidden', alt: 'Logotext') %>    
+    </div>
+    <%end%>
 
     <div class="mt-4 md:mt-0 flex flex-wrap space-y-4">
      
@@ -19,10 +23,8 @@
         <span class=""><%= icon('fa-solid', 'arrow-down', class:"fa-bounce ", style:"--fa-bounce-height: 3px") %></span>
         <span class=""><%= t('views.site.home.cta') %></span>
       </a>
-
-    
     </div>
-
+    
   </div>
 </section>
 

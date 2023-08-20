@@ -1,18 +1,14 @@
-<nav class="bg-white border-gray-200 dark:bg-gray-900 sticky top-0 z-30 shadow-lg dark:shadow-blue-800/50 ">
+<nav class="bg-white border-gray-200 dark:bg-gray-900 sticky top-0 z-30 shadow-lg dark:shadow-emerald-800/50 ">
   <div class="max-w-screen-xl flex flex-wrap sm:flex-nowrap items-center justify-between mx-auto py-3 px-4">
 
     <div class="">
-      <% if !is_unsubscribe_page? %>
-        <a href="#home" data-controller="scroll-to" data-scroll-to-offset-value="100" class="inline-flex align-bottom">
-          <%= image_tag('favicon.ico', class: 'h-8 w-fit mr-3', alt: 'Logo') %>
-          <div class="self-center font-semibold whitespace-nowrap dark:text-white text-end md:hidden lg:flex"> <%= t('views.app.title') %></div>
-        </a>
-      <%else%>
-        <a href="<%= root_path %>" class="inline-flex align-bottom">
-          <%= image_tag('favicon.ico', class: 'h-8 w-fit mr-3', alt: 'Logo') %>
-          <div class="self-center font-semibold whitespace-nowrap dark:text-white text-end md:hidden lg:flex"> <%= t('views.app.title') %></div>
-        </a>
-      <%end%>
+    
+      <a href="<%= root_path %>" class="inline-flex align-bottom">
+        <%= image_tag('favicon.ico', class: 'h-8 w-fit ', alt: 'Logo') %>
+        <%= image_tag('favtext-white.svg', class: 'w-auto h-4 my-auto mx-auto hidden dark:block', alt: 'Logotext') %>
+        <%= image_tag('favtext-dark.svg', class: 'w-auto h-4 my-auto mx-auto block dark:hidden', alt: 'Logotext') %>    
+      </a>
+    
     </div>
 
     <%=  %>
@@ -33,7 +29,7 @@
 
       <!-- Dropdown -->
       <div class="hidden text-base list-none bg-white divide-gray-100 rounded-lg dark:bg-gray-700" id="language-dropdown-menu">
-        <ul class="font-medium" role="none">
+        <ul class="font-medium pointer-events-none" role="none">
           <% if I18n.locale.to_s != 'en' %>
             <li>
               <%= form_with(url: toogle_locale_path(locale: :en), method: :post, class: "block") do |form| %>
@@ -70,28 +66,21 @@
 
     <% if !is_unsubscribe_page? %>
       <div class="items-center justify-center hidden  md:flex md:order-1" id="navbar-language" >
-        <ul class="grid grid-rows-4 grid-flow-col mt-4 md:mt-0  md:grid-rows-1  lg:space-x-2  ">
+        <ul class="grid grid-cols-4 md:grid-flow-col mt-4 md:mt-0  md:grid-rows-1 text-center lg:space-x-2  ">
+
           <li>
             <a href="#home" data-controller="scroll-to" data-navigation-target='home_link' data-scroll-to-offset-value="0" class="nav-link "> <%= t('views.site.navbar.home') %></a>
           </li>
+
           <li>
             <a href="#about" data-controller="scroll-to" data-navigation-target='about_link' data-scroll-to-offset-value="55" class="nav-link"><%= t('views.site.navbar.about') %></a>
           </li>
 
-          <% if false %>
-            <li>
-              <a href="#services" data-controller="scroll-to" data-navigation-target='services_link' data-scroll-to-offset-value="110" class="nav-link"><%= t('views.site.navbar.services') %></a>
-            </li>
-          <% end %>
+          
           <li>
             <a href="#faq" data-controller="scroll-to" data-navigation-target='faq_link' data-scroll-to-offset-value="110" class="nav-link"><%= t('views.site.navbar.faq') %></a>
           </li>
-          <li>
-            <a href="#updates" data-controller="scroll-to" data-navigation-target='updates_link' data-scroll-to-offset-value="110" class="nav-link"><%= t('views.site.navbar.updates') %></a>
-          </li>
-          <li>
-            <a href="#pricing" data-controller="scroll-to" data-navigation-target='pricing_link' data-scroll-to-offset-value="110" class="nav-link"><%= t('views.site.navbar.pricing') %></a>
-          </li>
+        
           <li>
             <a href="#contact" data-controller="scroll-to" data-navigation-target='contact_link' data-scroll-to-offset-value="110" class="nav-link"><%= t('views.site.navbar.contact') %></a>
           </li>
