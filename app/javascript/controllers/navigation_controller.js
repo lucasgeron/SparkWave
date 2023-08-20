@@ -9,8 +9,9 @@ window.class_list.push("dark:hover:bg-blue-700")
 import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
-  static targets = ["home_sec", "about_sec", "faq_sec", "services_sec", "updates_sec", "pricing_sec", "contact_sec",
-    "home_link", "about_link", "faq_link", "services_link", "updates_link", "pricing_link", "contact_link",
+  // "services_sec,  "services_link""
+  static targets = ["home_sec", "about_sec", "faq_sec", "updates_sec", "pricing_sec", "contact_sec",
+    "home_link", "about_link", "faq_link","updates_link", "pricing_link", "contact_link",
     "newsletter_sec"]
 
   static home_sec = 0;

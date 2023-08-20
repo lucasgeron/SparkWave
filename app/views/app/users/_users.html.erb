@@ -1,8 +1,8 @@
-<div class="relative overflow-x-auto sm:rounded-lg">
+<div class="relative   overflow-x-auto rounded-lg">
   <table class="w-full text-sm text-center ">
     <thead class="text-xs text-gray-900 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
       <tr>
-        <% ['id', 'created_at', 'finished'].each do |attribute| %>
+        <% ['reference', 'created_at', 'updated_at', 'finished'].each do |attribute| %>
           <th scope="col" class="p-4 text-center">
             <%= App::User.human_attribute_name(attribute) %>
           </th>
@@ -11,23 +11,28 @@
       </tr>
     </thead>
     <tbody>
-      <% app_users.each do |user| %>
+      <% app_users.order(:finished, updated_at: :desc).each do |user| %>
         <div id="<%= dom_id user %>">
 
           <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+
             <td class="p-2">
-              <%= user.id %>
+              <%= user.reference %>
             </td>
             <td class="p-2">
-              <%= time_ago_in_words(user.created_at) %>
+              <%= user.created_at.strftime('%H:%M:%S') %>
             </td>
             <td class="p-2">
-              <%= user.finished ? time_ago_in_words(user.updated_at) : icon('fa-solid','check') %>
+              <%= user.finished ? " #{user.updated_at.strftime('%H:%M:%S')}" : icon('fa-solid','spinner', class:'fa-spin')  %>            </td>
+            <td class="p-2">
+              <%= user.finished ? user.duration : time_ago_in_words( user.updated_at) %>
             </td>
             <td class="p-2">
-              <%= button_to app_user_path(user), method: :delete, class: "btn-delete flex-none" do %>
-                <%= icon('fa-solid','trash-can', class:'-mx-1')%>
-              <% end %>
+              
+            <%= button_to app_user_path(user), method: :patch, form_class: "", class:'btn-secondary flex-none', params: { app_user: { finished: true } } do %>
+              <%= icon('fa-solid','check',class:'-mx-1') %>
+            <%end unless user.finished %>
+            
             </td>
           </tr>
 

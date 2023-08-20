@@ -52,13 +52,13 @@ pt-BR:
         rights: Todos os direitos reservados
         developed_by: Desenvolvido por
       home: 
-        title: Nós criamos ferramentas que nos únem abc abc .
-        description: Flowbite ajuda você a se conectar com amigos e comunidades de pessoas que compartilham seus interesses. Conectar-se com seus amigos e familiares, bem como descobrir novos, é fácil com recursos como Grupos.
+        title: Spark Wave à Startup que você procura!
+        description: Nós somos a Spark Wave, assim como uma onda de energia positiva, buscamos impulsionar a mudança ao oferecer soluções inovadoras para a àrea da saúde. Nosso nome reflete o compromisso que temos em criar um impacto positivo na sociedade criando tecnologias e soluções para um mundo melhor.
         cta: Explorar
       about:
-        title: Nós não reinventamos a roda
-        description: Somos estrategistas, designers e desenvolvedores. Inovadores e solucionadores de problemas. Pequeno o suficiente para ser simples e rápido, mas grande o suficiente para fornecer o escopo que você deseja no ritmo que você precisa. Pequeno o suficiente para ser simples e rápido, mas grande o suficiente para fornecer o escopo que você deseja no ritmo que você precisa.
-        note: Somos estrategistas, designers e desenvolvedores. Inovadores e solucionadores de problemas. Pequeno o suficiente para ser simples e rápido.
+        title: FilaMed
+        description: FilaMed é um aplicativo que mantém você informado sobre as filas de atendimento nas unidades de saúde, proporcionando o melhor planejamento da sua visita de maneira eficaz. 
+        note: Com o FilaMed, você ganha mais controle sobre o seu tempo e pode evitar longas esperas desnecessárias. Nosso objetivo é proporcionar a você mais tranquilidade, agilidade e acesso a cuidados de saúde.
         cta: Descubra o que temos a oferecer
       faq:
         title: Perguntas frequentes
@@ -66,7 +66,7 @@ pt-BR:
         sub_title: Outras perguntas relevantes
       services:
         title: Projetado para equipes de negócios como a sua
-        description: Aqui na Flowbite, nos concentramos em mercados onde tecnologia, inovação e capital podem liberar valor a longo prazo e impulsionar o crescimento econômico.
+        description: A missão da Spark Wave é pioneirizar avanços na interseção entre tecnologia e saúde, desenvolvendo soluções inteligentes que melhoram significativamente a qualidade de vida e o bem-estar das pessoas. Nós acreditamos que ao combinar a inovação tecnológica com o setor da saúde, podemos enfrentar os desafios mais prementes e criar impacto positivo duradouro.
       updates:
         title: Últimas Atualizações
         description: Descubra todas as novidades
@@ -115,7 +115,7 @@ pt-BR:
           form_subject: Assunto para plano completo
           form_message: Mensagem para plano completo
       contact:
-        title: Entre em contato
+        title: Entre em contato com a SparK Wave
         description: Precisa de detalhes sobre o nosso plano de negócios? Deixe-nos saber.
         email_label: Seu email
         email_placeholder: email@email.com
@@ -127,7 +127,7 @@ pt-BR:
         created_successfully: Sua mensagem foi enviada com sucesso.
       team:
         title: Conheça nosso time
-        description: Explore toda a coleção de componentes e elementos da Web de código aberto criados com as classes de utilitários do Tailwind
+        description: Conheça o time responsável pelo desenvolvimento dessa inovação
         members:
           - name: Bonnie Green
             img_src: https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png

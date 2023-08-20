@@ -8,7 +8,7 @@
 <% content_for :page_content do %>
 
   <% @app_health_units.each do |health_unit| %>
-    <p class="font-bold text-2xl"> <%= health_unit.name %> </p>
+    <%= link_to   health_unit.name,  health_unit, class:'font-bold text-2xl' %>
     <div class="default-grid">
       <%= render @app_queues.where(health_unit:  health_unit) %>
     </div>
