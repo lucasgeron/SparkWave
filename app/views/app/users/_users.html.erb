@@ -1,0 +1,38 @@
+<div class="relative overflow-x-auto sm:rounded-lg">
+  <table class="w-full text-sm text-center ">
+    <thead class="text-xs text-gray-900 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <% ['id', 'created_at', 'finished'].each do |attribute| %>
+          <th scope="col" class="p-4 text-center">
+            <%= App::User.human_attribute_name(attribute) %>
+          </th>
+        <% end %>
+        <th scope="col" class="p-4 text-center"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% app_users.each do |user| %>
+        <div id="<%= dom_id user %>">
+
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <td class="p-2">
+              <%= user.id %>
+            </td>
+            <td class="p-2">
+              <%= time_ago_in_words(user.created_at) %>
+            </td>
+            <td class="p-2">
+              <%= user.finished ? time_ago_in_words(user.updated_at) : '---' %>
+            </td>
+            <td class="p-2">
+              <%= button_to app_user_path(user), method: :delete, class: "btn-delete flex-none" do %>
+                <%= icon('fa-solid','trash-can', class:'-mx-1')%>
+              <% end %>
+            </td>
+          </tr>
+
+        </div>
+      <%end%>
+    </tbody>
+  </table>
+</div>

@@ -1,16 +1,17 @@
 <% content_for :ctas_primary do %>
-  <%= link_to new_app_queue_path, class: "btn-primary flex-none" do %>
-    <%= icon('fa-solid','plus',class:'btn-icon') %>
-    <%= App::Queue.model_name.human %>
-  <% end %>
+   <p class="h-9 block"> </p>
 <% end %>
 
 <% provide :head_title, App::Queue.model_name.human(count:2) %>
 <% provide :page_title, App::Queue.model_name.human(count:2) %>
 
 <% content_for :page_content do %>
-  <div class="default-grid">
-    <%= render @app_queues %>
-  </div>
+
+  <% @app_health_units.each do |health_unit| %>
+    <p class="font-bold text-2xl"> <%= health_unit.name %> </p>
+    <div class="default-grid">
+      <%= render @app_queues.where(health_unit:  health_unit) %>
+    </div>
+  <%end%>
 
 <%end%>

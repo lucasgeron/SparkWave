@@ -1,26 +1,35 @@
-<%= form_with(model: app_queue, class: "contents") do |form| %>
-  <% if app_queue.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(app_queue.errors.count, "error") %> prohibited this app_queue from being saved:</h2>
+<% if false %>
 
-      <ul>
-        <% app_queue.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+  <%= form_with(model: app_queue, class: "contents") do |form| %>
+    <% if app_queue.errors.any? %>
+      <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+        <h2><%= pluralize(app_queue.errors.count, "error") %> prohibited this app_queue from being saved:</h2>
+
+        <ul>
+          <% app_queue.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+      <div class="">
+        <%= form.label :health_unit_id %>
+        <%= form.collection_select :health_unit_id, @health_units, :id, :name, {}, {class: "form-input"} %>
+      </div>
+
+      <div class="">
+        <%= form.label :category %>
+        <%= form.collection_select :category, @categories, :first, :last, {}, {class: "form-input"} %>
+      </div>
+
     </div>
+    <div class="mt-4 inline-flex w-full justify-end">
+      <%= form.submit class: "btn-primary" %>
+    </div>
+
   <% end %>
-
-  <div class="space-y-4">
-
-    <div class="">
-      <%= form.label :category %>
-      <%= form.text_field :category, class: "form-input" %>
-    </div>
-
-  </div>
-  <div class="mt-4 inline-flex w-full justify-end">
-    <%= form.submit class: "btn-primary" %>
-  </div>
 
 <% end %>

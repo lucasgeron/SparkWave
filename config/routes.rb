@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
   namespace :app do
-    resources :queues
-    resources :workspaces
+    resources :queues, except: %i[ new create edit update destroy ]
     resources :users
     resources :health_insurances
-    resources :professionals
-    resources :specializations
-    resources :areas
     resources :health_units
   end
 

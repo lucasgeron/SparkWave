@@ -85,7 +85,7 @@ module DocktorAppointmentManagement
         errors.add(:base, 'Você precisa informar os campos')
       elsif health_unit.nil?
         errors.add(:base, 'Token inválido')
-      elsif !QueueCategory.list.include?(category)
+      elsif !Queue.CATEGORIES.list.include?(category)
         errors.add(:base, 'Essa categoria não está incluída na lista')
       elsif queue.nil?
         errors.add(:base, 'Problema ao criar fila')
