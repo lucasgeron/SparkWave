@@ -36,6 +36,7 @@ gem "font-awesome-sass", "~> 6.4.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem 'enumerate_it'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

@@ -1,7 +1,6 @@
 class App::Queue < ApplicationRecord
-  belongs_to :heal_unit, class_name: 'App::HealthUnit'
+  belongs_to :health_unit, class_name: 'App::HealthUnit'
   has_many :users, class_name: 'App::User'
 
-  CATEGORIES = %w[priority  regular  pediatric].freeze
-
+  has_enumeration_for :category, with: QueueCategory, create_helpers: true, create_scopes: true
 end

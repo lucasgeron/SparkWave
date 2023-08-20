@@ -1,0 +1,6 @@
+en:
+  enumerations:
+    queue_category:
+      scheduled: 'Scheduled'
+      in_progress: 'In progress'
+      completed: 'Completed'

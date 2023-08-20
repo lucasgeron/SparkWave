@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   namespace :app do
     resources :queues
     resources :workspaces
@@ -12,10 +10,16 @@ Rails.application.routes.draw do
     resources :health_units
   end
 
-  
+  namespace :api, only: [] do
+    resource :doctors_appointments do
+      post :register_admission
+      post :register_patient_output
+    end
+  end
+
   root to: "site#index"
   post '/toogle_locale', to: 'site#toogle_locale', as: :toogle_locale
-  
+
   post "/subscribe", to: 'site#subscribe_to_newsletter', as: :subscribe
   get "/unsubscribe", to: 'site#unsubscribe_confirm', as: :unsubscribe_confirm
   post "/unsubscribe", to: 'site#unsubscribe_to_newsletter', as: :unsubscribe
