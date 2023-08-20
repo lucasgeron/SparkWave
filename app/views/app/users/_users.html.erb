@@ -22,7 +22,7 @@
               <%= time_ago_in_words(user.created_at) %>
             </td>
             <td class="p-2">
-              <%= user.finished ? time_ago_in_words(user.updated_at) : '---' %>
+              <%= user.finished ? time_ago_in_words(user.updated_at) : icon('fa-solid','check') %>
             </td>
             <td class="p-2">
               <%= button_to app_user_path(user), method: :delete, class: "btn-delete flex-none" do %>

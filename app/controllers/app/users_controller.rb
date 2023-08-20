@@ -65,6 +65,6 @@ class App::UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def app_user_params
-      params.require(:app_user).permit(:finished, :queue_id)
+      params.require(:app_user).permit(:finished, :queue_id, :reference)
     end
 end
