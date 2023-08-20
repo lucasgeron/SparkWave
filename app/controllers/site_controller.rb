@@ -3,7 +3,6 @@ class SiteController < ApplicationController
 
   before_action :set_locale
 
-
   layout 'site'
 
   def index
@@ -16,7 +15,7 @@ class SiteController < ApplicationController
     @subscriber = Subscriber.new
     # Recover the form data (if any) from the session, and then, remove the data from the session
     @subscriber.email = session.delete(:subscriber_email) if session.key?(:subscriber_email)
-    
+
     @contact_form = ContactForm.new
     # Recover the form data (if any) from the session, and then, remove the data from the session
     @contact_form.email = session.delete(:contact_form_email) if session.key?(:contact_form_email)
@@ -24,7 +23,6 @@ class SiteController < ApplicationController
     @contact_form.message = session.delete(:contact_form_message) if session.key?(:contact_form_message)
 
     # redirect_to root_path(locale: I18n.locale, anchor: 'newsletter')
-
   end
 
   # POST /toogle_locale

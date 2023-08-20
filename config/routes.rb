@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   namespace :app do
+    # get 'integrations/index'
     resources :queues, except: %i[ new create edit update destroy ]
     resources :users
     resources :health_insurances
     resources :health_units
+    resources :integrations, only: :index
   end
 
   namespace :api, only: [] do

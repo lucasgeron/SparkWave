@@ -1,0 +1,40 @@
+<%= javascript_include_tag( 'custom' ) %>
+<% content_for :page_content do %>
+  <p clas="font-bold text-4xl">Registrar entrada de paciente na unidade de saúde</p>
+  <%= form_with(url: register_admission_api_doctors_appointments_path, class: "contents") do |form| %>
+    <%= form.label 'Hospital', class: "block text-sm font-medium text-gray-700" %>
+    <%= form.select :token, options_for_select(App::HealthUnit.all.map { |health_unit| [health_unit.name, health_unit.token] }), {}, class: "focus:ring-purple border-2 border-gray-300 focus:border-purple rounded-box w-full"%>
+
+    <%= form.label 'Fila', class: "block text-sm font-medium text-gray-700" %>
+    <%= form.select :category, options_for_select(App::Queue::CATEGORIES), {}, class: "focus:ring-purple border-2 border-gray-300 focus:border-purple rounded-box w-full"%>
+
+    <div class="mt-4 inline-flex w-full justify-end">
+      <%= form.submit 'Registrar entrada', class: "btn-primary" %>
+    </div>
+  <% end %>
+
+  <p clas="font-bold text-4xl">Registrar saída de paciente na unidade de saúde</p>
+  <%= form_with(url: register_admission_api_doctors_appointments_path, class: "contents") do |form| %>
+    <%= form.label 'Hospital', class: "block text-sm font-medium text-gray-700" %>
+    <%= form.select :token, options_for_select(App::HealthUnit.all.map { |health_unit| [health_unit.name, health_unit.token] }), {}, class: "focus:ring-purple border-2 border-gray-300 focus:border-purple rounded-box w-full", id: 'select_token'%>
+
+    <%= form.label 'Paciente', class: "block text-sm font-medium text-gray-700" %>
+    <%= form.select :reference, options_for_select(App::HealthUnit.all.map { |health_unit| [health_unit.name, health_unit.token] }), {}, class: "focus:ring-purple border-2 border-gray-300 focus:border-purple rounded-box w-full"%>
+
+    <%= form.label 'Fila', class: "block text-sm font-medium text-gray-700" %>
+    <%= form.select :category, options_for_select(App::Queue::CATEGORIES), {}, class: "focus:ring-purple border-2 border-gray-300 focus:border-purple rounded-box w-full"%>
+
+    <div class="mt-4 inline-flex w-full justify-end">
+      <%= form.submit 'Registrar entrada', class: "btn-primary" %>
+    </div>
+  <% end %>
+<% end %>
+
+<%= javascript_tag do %>
+  var token =  document.getElementById('select_token');         
+  alert("teste")
+
+  token.addEventListener('change', function() {
+    
+  });
+<% end %>
