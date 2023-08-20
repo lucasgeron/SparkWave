@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "cd3f31bd-6ab6-444d-95a4-ff8cb4e80081",
+		"name": "SparkWave",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14419540"
+	},
+	"item": [
+		{
+			"name": "DoctorsAppointments",
+			"item": [
+				{
+					"name": "register_admission",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept-Language",
+								"value": "pt-br",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "default_timezone",
+								"value": "Eastern Time (US & Canada)",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctors_appointment\": {\n        \"token\": \"nav9b72gz0\",\n        \"category\": \"pediatric\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/doctors_appointments/register_admission",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctors_appointments",
+								"register_admission"
+							]
+						},
+						"description": "## Criação de uma nova conta\n\n**Usada em:**\n\n\\*   Botão \"Inscreva-se\" na tela Crie sua Home Social\n    \n\n**Validações:**\n\n\\*   Obrigatório: name, email, phone, country_calling_code\n\\*   Unicidade: phone, email"
+					},
+					"response": []
+				},
+				{
+					"name": "register_patient_output",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept-Language",
+								"value": "pt-br",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "default_timezone",
+								"value": "Eastern Time (US & Canada)",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctors_appointment\": {\n        \"token\": \"nav9b72gz0\",\n        \"category\": \"regular\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/doctors_appointments/register_patient_output",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctors_appointments",
+								"register_patient_output"
+							]
+						},
+						"description": "## Criação de uma nova conta\n\n**Usada em:**\n\n\\*   Botão \"Inscreva-se\" na tela Crie sua Home Social\n    \n\n**Validações:**\n\n\\*   Obrigatório: name, email, phone, country_calling_code\n\\*   Unicidade: phone, email"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

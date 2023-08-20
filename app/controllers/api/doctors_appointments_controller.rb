@@ -25,13 +25,13 @@ class Api::DoctorsAppointmentsController < ApplicationController
 
   def success_callback
     lambda do |caller|
-      render json: { message: caller }, status: :ok
+      render json: caller, status: :ok
     end
   end
 
   def error_callback
     lambda do |caller|
-      render json: { message: caller.errors }, status: :unprocessable_entity
+      render json: caller.errors, status: :unprocessable_entity
     end
   end
 end

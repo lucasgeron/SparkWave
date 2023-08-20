@@ -35,7 +35,7 @@ module DocktorAppointmentManagement
     def check_out
       user = queue.users.where(finished: false).first
 
-      user.present? ? register_checkout(user) : error_register_checkout
+      user.nil? ? error_register_checkout : register_checkout(user)
     end
 
     def error_register_checkout
@@ -85,7 +85,7 @@ module DocktorAppointmentManagement
         errors.add(:base, 'Você precisa informar os campos')
       elsif health_unit.nil?
         errors.add(:base, 'Token inválido')
-      elsif !Queue.CATEGORIES.list.include?(category)
+      elsif !App::Queue::CATEGORIES.include?(category)
         errors.add(:base, 'Essa categoria não está incluída na lista')
       elsif queue.nil?
         errors.add(:base, 'Problema ao criar fila')
