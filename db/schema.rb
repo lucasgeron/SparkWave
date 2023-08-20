@@ -14,12 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_19_173858) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "app_areas", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "app_health_insurances", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -37,28 +31,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_19_173858) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "app_professionals", force: :cascade do |t|
-    t.string "name"
-    t.string "crm"
-    t.string "role"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "app_queues", force: :cascade do |t|
-    t.bigint "workspace_id", null: false
+    t.bigint "health_unit_id", null: false
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["workspace_id"], name: "index_app_queues_on_workspace_id"
-  end
-
-  create_table "app_specializations", force: :cascade do |t|
-    t.bigint "area_id", null: false
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["area_id"], name: "index_app_specializations_on_area_id"
+    t.index ["health_unit_id"], name: "index_app_queues_on_health_unit_id"
   end
 
   create_table "app_users", force: :cascade do |t|
@@ -69,13 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_19_173858) do
     t.index ["queue_id"], name: "index_app_users_on_queue_id"
   end
 
-  create_table "app_workspaces", force: :cascade do |t|
-    t.bigint "health_unit_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["health_unit_id"], name: "index_app_workspaces_on_health_unit_id"
-  end
-
   create_table "subscribers", force: :cascade do |t|
     t.string "email"
     t.string "locale"
@@ -83,8 +54,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_19_173858) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "app_queues", "app_workspaces", column: "workspace_id"
-  add_foreign_key "app_specializations", "app_areas", column: "area_id"
+  add_foreign_key "app_queues", "app_health_units", column: "health_unit_id"
   add_foreign_key "app_users", "app_queues", column: "queue_id"
-  add_foreign_key "app_workspaces", "app_health_units", column: "health_unit_id"
 end

@@ -1,15 +1,22 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
+<% content_for :ctas_secondary do %>
+  <%= link_to app_health_insurances_path, class: "btn-secondary-gray flex-none" do %>
+    <%= icon('fa-solid','arrow-left', class:'-mx-1')%>
+  <%end%>
 
-    <%= render @app_health_insurance %>
+  <%= link_to edit_app_health_insurance_path(@app_health_insurance), class: "btn-secondary flex-none" do %>
+    <%= icon('fa-solid','pen-to-square', class:'-mx-1')%>
+  <%end%>
 
-    <%= link_to 'Edit this app_health_insurance', edit_app_health_insurance_path(@app_health_insurance), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Destroy this app_health_insurance', app_health_insurance_path(@app_health_insurance), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    </div>
-    <%= link_to 'Back to app_health_insurances', app_health_insurances_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  </div>
-</div>
+  <%= button_to app_health_insurance_path(@app_health_insurance), method: :delete, data: { turbo: false },onclick: "return confirm('#{t('views.app.general.delete_confirm')}')",class: "btn-delete flex-none" do %>
+    <%= icon('fa-solid','trash-can', class:'-mx-1')%>
+  <%end%>
+<% end %>
+
+
+<% provide :head_title, "#{t('views.app.general.showing')} #{App::HealthInsurance.model_name.human} " %>
+<% provide :page_title, "#{t('views.app.general.showing')} #{App::HealthInsurance.model_name.human} " %>
+<% provide :entry_id, "#{@app_health_insurance.id}" %>
+
+<% content_for :page_content do %>
+  <%= render "detail", app_health_insurance: @app_health_insurance %>
+<%end%>

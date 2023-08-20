@@ -1,0 +1,68 @@
+<div id="top" class="px-4 py-2 xl:py-4  xl:hidden w-full inline-flex justify-between items-center fixed top-0 bg-white dark:bg-gray-800 z-30">
+  <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none  rounded-lg text-sm py-2.5 px-4">
+    <span class="sr-only">Open sidebar</span>
+    <%= icon('fa-solid','bars')%>
+  </button>
+
+  <div class="flex items-center justify-center xl:hidden space-x-2">
+    <p class="text-lg"> <%= yield :page_title %> </p>
+    <% if content_for(:entry_id)%>
+      <p class="description"> <%=icon('fa-solid','hashtag', class:'fa-sm mr-0.5')%><%= yield :entry_id %></p>
+    <%end %>
+  </div>
+
+</div>
+
+<aside id="sidebar-multi-level-sidebar" class=" fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full xl:translate-x-0" aria-label="Sidebar">
+  <div class="h-full px-3 overflow-y-auto bg-gray-100 dark:bg-gray-900 scrollbar-hide text-gray-900 dark:text-white">
+
+    <div class="sidebar-link-active hidden"></div>
+
+    <%# THEME SWITCHER %>
+    <div class="absolute z-40 top-3.5">
+      <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none  rounded-lg text-sm p-2.5">
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      </button>
+    </div>
+
+    <%# BIG HEADER %>
+    <div class="pt-5 pb-1 hidden xl:block sticky top-0 bg-gray-100 dark:bg-gray-900">
+      <%= image_tag('favicon.svg', class:'max-h-18 mx-auto mb-6 animate-breathe')%>
+      <%= image_tag('favtext-dark.svg', class:'max-h-4 block dark:hidden mx-auto ')%>
+      <%= image_tag('favtext-white.svg', class:'max-h-4 hidden dark:block mx-auto ')%>
+    </div>
+
+    <%# SMALL HEADER %>
+    <div class="pt-6 pb-1 bg-gray-100 dark:bg-gray-900  sticky top-0 xl:hidden mx-auto">
+      <div class="w-full inline-flex justify-center items-center">
+        <%= image_tag('favicon.svg', class:'max-h-4 mr-2 ')%>
+        <%= image_tag('favtext-dark.svg', class:'max-h-4 block dark:hidden  ')%>
+        <%= image_tag('favtext-white.svg', class:'max-h-4 hidden dark:block ')%>
+      </div>
+    </div>
+
+    <div class="space-y-1 mb-4 mt-4">
+
+      <%= link_to app_health_units_path, class:"sidebar-link#{is_link_active?('health_units')}" do %>
+        <%= icon('fa-solid','hospital', class:"mr-1")%>
+        <%= App::HealthUnit.model_name.human(count:2) %>
+      <%end%>
+
+      <%= link_to app_queues_path, class:"sidebar-link#{is_link_active?('queues')}" do %>
+        <%= icon('fa-solid','hospital', class:"mr-1")%>
+        <%= App::Queue.model_name.human(count:2) %>
+      <%end%>
+
+     
+
+      <%= link_to app_health_insurances_path, class:"sidebar-link#{is_link_active?('health_insurances')}" do %>
+        <%= icon('fa-solid','book-medical', class:"mr-1")%>
+        <%= App::HealthInsurance.model_name.human(count:2) %>
+      <%end%>
+
+    
+    
+
+    </div>
+  </aside>

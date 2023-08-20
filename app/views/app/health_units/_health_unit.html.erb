@@ -1,37 +1,18 @@
-<div id="<%= dom_id health_unit %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= health_unit.name %>
-  </p>
+<%= link_to health_unit do  %>
+  <div id="<%= dom_id health_unit %>" class="card ">
+    <p class="">
+      <strong class="block font-medium mb-1"> <%= health_unit.name %></strong>
+      <%= health_unit.category %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">City:</strong>
-    <%= health_unit.city %>
-  </p>
+    <p class="">
+      <%= health_unit.address %> - <%= health_unit.city %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Address:</strong>
-    <%= health_unit.address %>
-  </p>
+    <p class="">
+      <strong class="block font-medium mb-1"><%= health_unit.phone %></strong>
+    </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Phone:</strong>
-    <%= health_unit.phone %>
-  </p>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Category:</strong>
-    <%= health_unit.category %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Token:</strong>
-    <%= health_unit.token %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this health unit", health_unit, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this health unit', edit_app_health_unit_path(health_unit), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-</div>
+<%end%>

@@ -1,15 +1,29 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
+<% content_for :ctas_secondary do %>
+  <%= link_to app_health_units_path, class: "btn-secondary-gray flex-none" do %>
+    <%= icon('fa-solid','arrow-left', class:'-mx-1')%>
+  <%end%>
 
-    <%= render @app_health_unit %>
+  <%= link_to edit_app_health_unit_path(@app_health_unit), class: "btn-secondary flex-none" do %>
+    <%= icon('fa-solid','pen-to-square', class:'-mx-1')%>
+  <%end%>
 
-    <%= link_to 'Edit this app_health_unit', edit_app_health_unit_path(@app_health_unit), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Destroy this app_health_unit', app_health_unit_path(@app_health_unit), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    </div>
-    <%= link_to 'Back to app_health_units', app_health_units_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  </div>
-</div>
+  <%= button_to app_health_unit_path(@app_health_unit), method: :delete, data: { turbo: false },onclick: "return confirm('#{t('views.app.general.delete_confirm')}')",class: "btn-delete flex-none" do %>
+    <%= icon('fa-solid','trash-can', class:'-mx-1')%>
+  <%end%>
+<% end %>
+
+<%=content_for :ctas_primary do %>
+   <%= link_to new_app_workspace_path(health_unit_id: @app_health_unit.id), class: "btn-primary flex-none" do %>
+    <%= icon('fa-solid','plus',class:'btn-icon') %>
+    <%= App::Workspace.model_name.human %>
+  <% end %>
+<%end%>
+
+
+<% provide :head_title, "#{t('views.app.general.showing')} #{App::HealthUnit.model_name.human} " %>
+<% provide :page_title, "#{t('views.app.general.showing')} #{App::HealthUnit.model_name.human} " %>
+<% provide :entry_id, "#{@app_health_unit.id}" %>
+
+<% content_for :page_content do %>
+  <%= render "detail", app_health_unit: @app_health_unit %>
+<%end%>

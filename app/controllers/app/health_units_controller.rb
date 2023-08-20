@@ -1,5 +1,6 @@
 class App::HealthUnitsController < ApplicationController
   before_action :set_app_health_unit, only: %i[ show edit update destroy ]
+  before_action :set_content_for_form, only: %i[ new edit create update ]
 
   # GET /app/health_units or /app/health_units.json
   def index
@@ -66,5 +67,9 @@ class App::HealthUnitsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def app_health_unit_params
       params.require(:app_health_unit).permit(:name, :city, :address, :phone, :category, :token)
+    end
+
+    def set_content_for_form
+      @categories = App::HealthUnit::CATEGORIES
     end
 end

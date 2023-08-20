@@ -1,0 +1,10 @@
+<div class="space-y-4">
+
+  <% %i[name].each do |attr| %>
+    <div class="">
+      <p class=""><%= App::HealthInsurance.human_attribute_name(attr)%></p>
+      <p class="detail-input"><%= app_health_insurance[attr]  %></p>
+    </div>
+  <%end%>
+
+</div>

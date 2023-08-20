@@ -1,5 +1,6 @@
 ---
 pt-BR:
+  
   activemodel:
     models:
       contact_form: Formulário de Contato
@@ -12,7 +13,35 @@ pt-BR:
     models:
       contactform: Formulário de Contato
       subscriber: Assinante
+      app/health_unit:
+        one: Unidade de Saúde
+        other: Unidades de Saúde
+      app/workspace:
+        one: Espaço de Trabalho
+        other: Espaços de Trabalho
+      app/queue:
+        one: Fila de Espera
+        other: Filas de Espera
+      app/health_insurance:
+        one: Convênio
+        other: Convênios
+      app/professional:
+        one: Profissional
+        other: Profissionais
     attributes:
+      app/health_unit:
+        name: Nome
+        city: Cidade
+        address: Endereço
+        phone: Telefone
+        category: Categoria
+        token: Token
+      app/queue:
+        health_unit_id: Unidade de Saúde
+        category: Categoria 
+      app/health_insurance:
+        name: Nome
+
       contactform:
         email: Teste OK
         subject: Teste 2
@@ -25,6 +54,23 @@ pt-BR:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+  constants:
+    app/health_unit:
+      emergency_care_unit: Unidade de Pronto Atendimento
+      pediatric_emergency_care_unit: Unidade de Pronto Atendimento Pediátrico
+      hospital: Hospital
+      emergency_hospital: Hospital de Emergência
+      hospital_emergency_room: Pronto-Socorro Hospitalar
+      urgent_care_clinics: Prontoclínicas
+      24_hour_emergency_care: Pronto Atendimento 24 Horas
+      basic_health_unit: Unidade Básica de Saúde
+    app/queue:
+      CATEGORIES:
+        priority: Prioritária 
+        regular: Normal 
+        pediatric : Pediatria
+        
+  
   date:
     abbr_day_names:
     - dom

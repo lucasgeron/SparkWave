@@ -5,6 +5,38 @@ pt-BR:
       name: Exemplo de Aplicação Rails
       developer: lucasgeron
       github: https://github.com/lucasgeron
+      general:
+        new: Criar 
+        edit: Editar
+        editing: Editando
+        show: Exibir
+        showing: Exibindo
+        all: Todos
+        select_all_m: Selecionar Todos
+        select_all_f: Selecionar Todas
+        empty_input_file: Selecione um Arquivo
+        search: Pesquisar
+        delete_confirm: 'Tem certeza que deseja excluir este registro?'
+        hide_confirm: 'Tem certeza que deseja ocultar este registro?'
+        flash:
+          switch_client: 'Devido as permissões, é necessário selecione o registro novamente'
+          unauthorized: 'Você não possui permissão para acessar esta página'
+          ban_alert: 'ATENÇÃO: Repetir esta ação pode resultar banimento'
+          not_found_m: '%{model} não encontrado' 
+          not_found_f: '%{model} não encontrada' 
+          create_m: '%{model} criado com sucesso'
+          create_f: '%{model} criada com sucesso'
+          update_m: '%{model} atualizado com sucesso'
+          update_f: '%{model} atualizada com sucesso'
+          destroy_m: '%{model} excluido com sucesso'
+          destroy_f: '%{model} excluida com sucesso'
+          destroy_failed_m: 'Não é possível excluir este %{model} pois ele possui dependências'
+          destroy_failed_f: 'Não é possível excluir esta %{model} pois ela possui dependências'
+          destroy_attachment_m: '%{attribute} excluido com sucesso'
+          destroy_attachment_f: '%{attribute} excluida com sucesso'
+          invalid_image_format: 'não possui uma extensão válida'
+          invalid_image_size: 'é muito grande'
+          course_already_exists: 'já registrado para esta Instituição'
     site:
       language_switched: Idioma alterado para Português do Brasil.
       navbar:
@@ -20,7 +52,7 @@ pt-BR:
         rights: Todos os direitos reservados
         developed_by: Desenvolvido por
       home: 
-        title: Nós criamos ferramentas que nos únem.
+        title: Nós criamos ferramentas que nos únem abc abc .
         description: Flowbite ajuda você a se conectar com amigos e comunidades de pessoas que compartilham seus interesses. Conectar-se com seus amigos e familiares, bem como descobrir novos, é fácil com recursos como Grupos.
         cta: Explorar
       about:

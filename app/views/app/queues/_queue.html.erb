@@ -1,17 +1,10 @@
-<div id="<%= dom_id queue %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Workspace:</strong>
-    <%= queue.workspace_id %>
-  </p>
+<%= link_to queue do  %>
+  <div id="<%= dom_id queue %>" class='card'>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Category:</strong>
-    <%= queue.category %>
-  </p>
+    <p class="">
+      <strong class="block font-medium mb-1"><%= queue.category %></strong>
+      <%= queue.workspace.name %>
+    </p>
 
-  <% if action_name != "show" %>
-    <%= link_to "Show this queue", queue, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this queue', edit_app_queue_path(queue), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-</div>
+  </div>
+<% end %>

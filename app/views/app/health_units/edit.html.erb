@@ -1,8 +1,17 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Editing health unit</h1>
+<% content_for :ctas_secondary do %>
+  <%= link_to app_health_units_path, class: "btn-secondary-gray flex-none" do %>
+    <%= icon('fa-solid','arrow-left', class:'-mx-1')%>
+  <%end%>
 
+  <%= link_to app_health_unit_path(@app_health_unit), class: "btn-secondary flex-none" do %>
+    <%= icon('fa-solid','arrow-up-right-from-square', class:'-mx-1')%>
+  <%end%>
+<% end %>
+
+<% provide :head_title, "#{t('views.app.general.editing')} #{App::HealthUnit.model_name.human}" %>
+<% provide :page_title, "#{t('views.app.general.editing')} #{App::HealthUnit.model_name.human}" %>
+<% provide :entry_id, "#{@app_health_unit.id}" %>
+
+<% content_for :page_content do %>
   <%= render "form", app_health_unit: @app_health_unit %>
-
-  <%= link_to "Show this health unit", @app_health_unit, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <%= link_to "Back to health units", app_health_units_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-</div>
+<%end%>
