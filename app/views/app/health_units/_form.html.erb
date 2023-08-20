@@ -34,7 +34,7 @@
 
     <div class="">
       <%= form.label :category %>
-      <%= form.collection_select :category, @categories, :to_s, :to_s, {}, {class: "form-input"} %>
+      <%= form.collection_select :category, @categories, :first, :last, {}, {class: "form-input"} %>
     </div>
 
   </div>

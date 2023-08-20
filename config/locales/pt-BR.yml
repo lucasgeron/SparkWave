@@ -65,10 +65,9 @@ pt-BR:
       24_hour_emergency_care: Pronto Atendimento 24 Horas
       basic_health_unit: Unidade Básica de Saúde
     app/queue:
-      CATEGORIES:
-        priority: Prioritária 
-        regular: Normal 
-        pediatric : Pediatria
+      priority: Prioritária 
+      regular: Normal 
+      pediatric : Pediatria
         
   
   date:

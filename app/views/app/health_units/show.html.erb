@@ -12,12 +12,6 @@
   <%end%>
 <% end %>
 
-<%=content_for :ctas_primary do %>
-   <%= link_to new_app_workspace_path(health_unit_id: @app_health_unit.id), class: "btn-primary flex-none" do %>
-    <%= icon('fa-solid','plus',class:'btn-icon') %>
-    <%= App::Workspace.model_name.human %>
-  <% end %>
-<%end%>
 
 
 <% provide :head_title, "#{t('views.app.general.showing')} #{App::HealthUnit.model_name.human} " %>

@@ -26,6 +26,9 @@ class App::HealthUnitsController < ApplicationController
 
     respond_to do |format|
       if @app_health_unit.save
+        App::Queue::CATEGORIES.each do |category|
+          App::Queue.create!(category: category, health_unit: @app_health_unit)
+        end
         format.html { redirect_to app_health_unit_url(@app_health_unit), notice: "Health unit was successfully created." }
         format.json { render :show, status: :created, location: @app_health_unit }
       else
@@ -66,10 +69,10 @@ class App::HealthUnitsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def app_health_unit_params
-      params.require(:app_health_unit).permit(:name, :city, :address, :phone, :category, :token)
+      params.require(:app_health_unit).permit(:name, :city, :address, :phone, :category)
     end
 
     def set_content_for_form
-      @categories = App::HealthUnit::CATEGORIES
+      @categories = App::HealthUnit::CATEGORIES.map { |category| [category, t("constants.app/health_unit.#{category}")] }
     end
 end

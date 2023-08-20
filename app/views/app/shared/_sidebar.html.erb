@@ -50,15 +50,20 @@
       <%end%>
 
       <%= link_to app_queues_path, class:"sidebar-link#{is_link_active?('queues')}" do %>
-        <%= icon('fa-solid','hospital', class:"mr-1")%>
+        <%= icon('fa-solid','hospital-user', class:"mr-1")%>
         <%= App::Queue.model_name.human(count:2) %>
       <%end%>
 
-     
-
+    
       <%= link_to app_health_insurances_path, class:"sidebar-link#{is_link_active?('health_insurances')}" do %>
         <%= icon('fa-solid','book-medical', class:"mr-1")%>
         <%= App::HealthInsurance.model_name.human(count:2) %>
+      <%end%>
+
+    
+      <%= link_to '#', class:"sidebar-link#{is_link_active?('api')}" do %>
+        <%= icon('fa-solid','cube', class:"mr-1")%>
+        API
       <%end%>
 
     

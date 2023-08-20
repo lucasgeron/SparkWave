@@ -1,18 +1,9 @@
 <%= link_to health_unit do  %>
   <div id="<%= dom_id health_unit %>" class="card ">
-    <p class="">
-      <strong class="block font-medium mb-1"> <%= health_unit.name %></strong>
-      <%= health_unit.category %>
-    </p>
-
-    <p class="">
-      <%= health_unit.address %> - <%= health_unit.city %>
-    </p>
-
-    <p class="">
-      <strong class="block font-medium mb-1"><%= health_unit.phone %></strong>
-    </p>
-
+    <p class="truncate block font-medium mb-1 text-lg"> <%= health_unit.name %> </p>
+    <p class="truncate text-sm"><%= t("constants.app/health_unit.#{health_unit.category}") %> </p>
+    <p class="truncate text-sm"> <%= health_unit.city %> </p>
+    <p class="block font-medium mb-1"><%= health_unit.phone %></p>
   </div>
 
 <%end%>

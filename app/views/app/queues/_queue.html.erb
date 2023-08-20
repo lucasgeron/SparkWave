@@ -2,8 +2,7 @@
   <div id="<%= dom_id queue %>" class='card'>
 
     <p class="">
-      <strong class="block font-medium mb-1"><%= queue.category %></strong>
-      <%= queue.workspace.name %>
+      <strong class="block font-medium mb-1"><%= t("constants.app/queue.#{queue.category}") %></strong>
     </p>
 
   </div>

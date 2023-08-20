@@ -1,9 +1,11 @@
 class App::QueuesController < ApplicationController
   before_action :set_app_queue, only: %i[ show edit update destroy ]
+  before_action :set_content_for_form, only: %i[ new edit create update ]
 
   # GET /app/queues or /app/queues.json
   def index
     @app_queues = App::Queue.all
+    @app_health_units = App::HealthUnit.joins(:queues).distinct
   end
 
   # GET /app/queues/1 or /app/queues/1.json
@@ -11,13 +13,13 @@ class App::QueuesController < ApplicationController
   end
 
   # GET /app/queues/new
-  def new
-    @app_queue = App::Queue.new
-  end
+  # def new
+  #   @app_queue = App::Queue.new(health_unit_id: params[:health_unit_id])
+  # end
 
   # GET /app/queues/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /app/queues or /app/queues.json
   def create
@@ -65,6 +67,11 @@ class App::QueuesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def app_queue_params
-      params.require(:app_queue).permit(:workspace_id, :category)
+      params.require(:app_queue).permit(:health_unit_id, :category)
+    end
+
+    def set_content_for_form
+      @health_units = App::HealthUnit.all
+      @categories = App::Queue::CATEGORIES.map { |category| [category, t("constants.app/queue.#{category}")] }
     end
 end
