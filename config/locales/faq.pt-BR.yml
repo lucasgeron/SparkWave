@@ -3,17 +3,17 @@ pt-BR:
     site:
       faq:
         main_questions:
-          - question: O que você quer dizer com "ativos do Figma"?
-            answer: Você terá acesso para baixar o projeto completo do Figma, incluindo todas as páginas, os componentes, páginas responsivas e também os ícones, ilustrações e imagens incluídas nas telas.
+          - question: No que a Spark Wave pode ajudar na área da saúde?
+            answer: A Spark Wave pode desempenhar um papel fundamental na área da saúde, trazendo inovações tecnológicas e soluções inteligentes que abordam uma variedade de desafios e melhoram a prestação de cuidados de saúde. Aqui estão algumas maneiras pelas quais a Spark Wave pode ajudar na área da saúde.
 
-          - question: O que exatamente significa "acesso vitalício"?
-            answer: Depois de adquirir os pacotes de design, código ou ambos, você terá acesso a todas as atualizações futuras com base no roteiro, sem nenhum custo adicional.
+          - question: No que o FilaMed pode ajudar os pacientes?
+            answer: O aplicativo poderá oferecer um sistema de gerenciamento de filas de espera para hospitais. Melhorando a experiência dos pacientes.
 
-          - question: Como funciona o suporte?
-            answer: Estamos cientes da importância de um suporte bem qualificado, por isso decidimos que o suporte será fornecido apenas pelos autores que realmente trabalharam neste projeto.
+          - question: Quero fazer um projeto com a Spark Wave o que devo fazer?
+            answer: Pesquise sobre a Spark Wave para entender sua área de atuação e valores. Identifique como sua ideia se alinha aos objetivos da empresa. Por fim, entre em contato com a Spark Wave, explicando sua proposta de projeto.
 
-          - question: Quero construir mais de um projeto. Isso é permitido?
-            answer: Você pode usar o Windster para um número ilimitado de projetos, seja um site pessoal, um aplicativo SaaS ou um site para um cliente. 
+          - question: Como surgiu a ideia do FilaMed?
+            answer: Através de um evento de Startup, onde vários acadêmicos se reuniram com um propósito de resolver o problema do tempo de espera nas filas dos pronto socorros, depois de várias reuniões e orientações surgiu esse aplicativo com o objetivo de auxiliar as pessoas na sua ida ao pronto socorro de maneira mais eficiente.
 
         extra_questions: 
           - question: O que inclui as "atualizações gratuitas"?

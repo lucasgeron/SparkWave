@@ -13,7 +13,7 @@
         <div data-aos="zoom-in-up" data-aos-delay="50" class="items-start bg-gray-100 rounded-lg grid grid-cols-3 space-x-2 p-2 dark:bg-gray-800 dark:border-gray-700 ">
 
           <div class="col-span-1">
-            <img class=" rounded-lg" src="<%= item[:img_src] %>" alt="Bonnie Avatar">
+            <%= image_tag(item[:img_src], class:'rounded-lg' )%>
           </div>
 
           <div class="col-span-2 pl-2 space-y-2">

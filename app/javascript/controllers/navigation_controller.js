@@ -1,27 +1,26 @@
 window.class_list = []
 window.class_list.push("ACTIVE_LINK")
 window.class_list.push("text-white")
-window.class_list.push("bg-blue-600")
+window.class_list.push("bg-emerald-500")
 window.class_list.push("hover:text-white")
-window.class_list.push("hover:bg-blue-700")
-window.class_list.push("dark:hover:bg-blue-700")
+window.class_list.push("hover:bg-emerald-600")
+window.class_list.push("dark:hover:bg-emerald-600")
 
 import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
-  // "services_sec,  "services_link""
-  static targets = ["home_sec", "about_sec", "faq_sec", "updates_sec", "pricing_sec", "contact_sec",
-    "home_link", "about_link", "faq_link","updates_link", "pricing_link", "contact_link",
-    "newsletter_sec"]
+ 
+  static targets = ["home_sec", "about_sec", "faq_sec",  "contact_sec",
+    "home_link", "about_link", "faq_link", "contact_link"]
 
   static home_sec = 0;
   static about_sec = 0;
   static faq_sec = 0;
-  static services_sec = 0;
-  static updates_sec = 0;
-  static pricing_sec = 0;
+  // static services_sec = 0;
+  // static updates_sec = 0;
+  // static pricing_sec = 0;
   static contact_sec = 0;
-  static newsletter_sec = 0;
+  // static newsletter_sec = 0;
 
   static links = []
   static current_link = ""
@@ -35,18 +34,18 @@ export default class extends Controller {
       this.constructor.home_sec = this.home_secTarget.offsetTop - gap
       this.constructor.about_sec = this.about_secTarget.offsetTop - gap
       this.constructor.faq_sec = this.faq_secTarget.offsetTop - gap
-      this.constructor.services_sec = this.services_secTarget.offsetTop - gap
-      this.constructor.updates_sec = this.updates_secTarget.offsetTop - gap
-      this.constructor.pricing_sec = this.pricing_secTarget.offsetTop - gap
+      // this.constructor.services_sec = this.services_secTarget.offsetTop - gap
+      // this.constructor.updates_sec = this.updates_secTarget.offsetTop - gap
+      // this.constructor.pricing_sec = this.pricing_secTarget.offsetTop - gap
       this.constructor.contact_sec = this.contact_secTarget.offsetTop - gap
-      this.constructor.newsletter_sec = this.newsletter_secTarget.offsetTop - gap
+      // this.constructor.newsletter_sec = this.newsletter_secTarget.offsetTop - gap
 
       this.constructor.links.push(this.home_linkTarget)
       this.constructor.links.push(this.about_linkTarget)
       this.constructor.links.push(this.faq_linkTarget)
-      this.constructor.links.push(this.services_linkTarget)
-      this.constructor.links.push(this.updates_linkTarget)
-      this.constructor.links.push(this.pricing_linkTarget)
+      // this.constructor.links.push(this.services_linkTarget)
+      // this.constructor.links.push(this.updates_linkTarget)
+      // this.constructor.links.push(this.pricing_linkTarget)
       this.constructor.links.push(this.contact_linkTarget)
 
       this.clearClasses()
@@ -82,49 +81,26 @@ export default class extends Controller {
         break;
 
       // CASE ABOUT
-      case (window.scrollY <= this.constructor.services_sec):
+      case (window.scrollY <= this.constructor.faq_sec):
         this.constructor.current_link = "about_link"
         this.addClassesToTarget(this.about_linkTarget)
         this.removeClassesFromTarget(this.home_linkTarget)
-        this.removeClassesFromTarget(this.services_linkTarget)
-        break;
-
-      // CASE SERVICES
-      case (window.scrollY <= this.constructor.faq_sec):
-        this.constructor.current_link = "services_link"
-        this.addClassesToTarget(this.services_linkTarget)
-        this.removeClassesFromTarget(this.about_linkTarget)
         this.removeClassesFromTarget(this.faq_linkTarget)
         break;
 
       // CASE FAQ
-      case (window.scrollY <= this.constructor.updates_sec):
+      case (window.scrollY <= this.constructor.contact_sec):
         this.constructor.current_link = "faq_link"
         this.addClassesToTarget(this.faq_linkTarget)
-        this.removeClassesFromTarget(this.updates_linkTarget)
-        this.removeClassesFromTarget(this.services_linkTarget)
-        break;
-
-      // CASE UPDATES
-      case (window.scrollY <= this.constructor.pricing_sec):
-        this.constructor.current_link = "updates_link"
-        this.addClassesToTarget(this.updates_linkTarget)
-        this.removeClassesFromTarget(this.faq_linkTarget)
-        this.removeClassesFromTarget(this.pricing_linkTarget)
-        break;
-
-      // CASE PRICING
-      case (window.scrollY <= this.constructor.contact_sec):
-        this.constructor.current_link = "pricing_link"
-        this.removeClassesFromTarget(this.updates_linkTarget)
+        this.removeClassesFromTarget(this.about_linkTarget)
         this.removeClassesFromTarget(this.contact_linkTarget)
-        this.addClassesToTarget(this.pricing_linkTarget)
         break;
 
+      
       // CASE CONTACT
       case (window.scrollY > this.constructor.contact_sec):
         this.constructor.current_link = "contact_link"
-        this.removeClassesFromTarget(this.pricing_linkTarget)
+        this.removeClassesFromTarget(this.faq_linkTarget)
         this.addClassesToTarget(this.contact_linkTarget)
         break;
     }

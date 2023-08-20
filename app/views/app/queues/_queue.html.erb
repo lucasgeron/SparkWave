@@ -1,9 +1,15 @@
 <%= link_to queue do  %>
   <div id="<%= dom_id queue %>" class='card'>
 
-    <p class="">
-      <strong class="block font-medium mb-1"><%= t("constants.app/queue.#{queue.category}") %></strong>
-    </p>
+    <div class="flex justify-between items-center">
+      <p class="">
+        <strong class="block font-medium mb-1"><%= t("constants.app/queue.#{queue.category}") %></strong>
+      </p>
+
+      <div class="text-sm bg-emerald-500 rounded-full w-auto px-3 py-2">
+        <p class="text-white"><%= queue.users.count%></p>
+      </div>
+    </div>
 
   </div>
 <% end %>

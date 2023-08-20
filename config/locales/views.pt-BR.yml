@@ -1,7 +1,7 @@
 pt-BR:
   views:
     app:
-      title: App Rails
+      title: FILA Med
       name: Exemplo de Aplicação Rails
       developer: lucasgeron
       github: https://github.com/lucasgeron
@@ -59,7 +59,7 @@ pt-BR:
         title: FilaMed
         description: FilaMed é um aplicativo que mantém você informado sobre as filas de atendimento nas unidades de saúde, proporcionando o melhor planejamento da sua visita de maneira eficaz. 
         note: Com o FilaMed, você ganha mais controle sobre o seu tempo e pode evitar longas esperas desnecessárias. Nosso objetivo é proporcionar a você mais tranquilidade, agilidade e acesso a cuidados de saúde.
-        cta: Descubra o que temos a oferecer
+        cta: Descubra mais sobre nosso produto
       faq:
         title: Perguntas frequentes
         description: Explore as principais perguntas e tire suas dúvidas
@@ -129,44 +129,56 @@ pt-BR:
         title: Conheça nosso time
         description: Conheça o time responsável pelo desenvolvimento dessa inovação
         members:
-          - name: Bonnie Green
-            img_src: https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png
-            role: CEO & Web Developer
-            description: Bonnie drives the technical strategy of the flowbite platform and brand.
+          - name: Aline Sauim
+            img_src: aline.jpg
+            role: 
+            description: 
             socials:
-              - facebook: link_to_facebook
-              - github: link_to_github
-              - behance: link_to_behance
-              - whatsapp: link_to_whatsapp
-              - instagram: link_to_whatsapp
-              - tiktok: link_to_whatsapp
-          - name: Jese Leos
-            img_src: https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png
-            role: CTO
-            description: Jese drives the technical strategy of the flowbite platform and brand.
+              - whatsapp: http://wa.me/554699346406
+              - instagram: http://instagram.com/
+          - name: Guilherme Castanha
+            img_src: guilherme.jpg
+            role: Acadêmico de Publicidade e Propaganda
+            description: Copywriter e Produtor
             socials:
-              - facebook: link_to_facebook
-              - github: link_to_github
-              - behance: link_to_behance
-              - whatsapp: link_to_whatsapp
-          - name: Bonnie Green
-            img_src: https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png
-            role: CEO & Web Developer
-            description: Bonnie drives the technical strategy of the flowbite platform and brand.
+              - whatsapp: http://wa.me/554699267756
+              - instagram: http://instagram.com/guilherme.casttanha
+          - name: Donato Junior
+            img_src: junior.jpg
+            role: Acadêmico de T.A.D.S
+            description: Aplication e Suporte em equipamentos biomédicos na 1000Medic
             socials:
-              - facebook: link_to_facebook
-              - github: link_to_github
-              - behance: link_to_behance
-              - whatsapp: link_to_whatsapp
-              - instagram: link_to_whatsapp
-              - tiktok: link_to_whatsapp
-          - name: Jese Leos
-            img_src: https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png
-            role: CTO
-            description: Jese drives the technical strategy of the flowbite platform and brand.
+              - whatsapp: http://wa.me/5546991149686
+              - instagram: http://instagram.com/junioroliveira.dj
+          - name: Keslley José
+            img_src: kesley.jpg
+            role: Web Developer
+            description: Desenvolvedor Full-Stack Ruby on Rails
             socials:
-              - facebook: link_to_facebook
-              - github: link_to_github
-              - behance: link_to_behance
-              - whatsapp: link_to_whatsapp
+              - github: https://github.com/capelinkeslley
+              - whatsapp: http://wa.me/5546991317701
+              - instagram: http://instagram.com/keslley_capelin
+          - name: Lucas Geron
+            img_src: lucas.jpg
+            role: Web Developer Full-Stack Ruby on Rails
+            description: Formado em Sistemas para Internet pela UTFPR
+            socials:
+              - github: https://github.com/lucasgeron?tab=repositories
+              - behance: http://be.net/lucasgeron
+              - whatsapp: http://wa.me/554699814417
+              - instagram: http://instagram.com/oolucasfernando
+          - name: Mariana Freitas
+            img_src: mariana.jpg
+            role: Acadêmica de Informática
+            description: Estudante na área da tecnologia.
+            socials:
+              - whatsapp: http://wa.me/5546988219079
+              - instagram: http://instagram.com/mariana_info
+          - name: Willian Ferrari
+            img_src: willian.jpg
+            role: Acadêmico de Engenharia Elétrica
+            description: Aplication e Suporte em equipamentos biomédicos na 1000Medic
+            socials:
+              - whatsapp: http://wa.me/554699814417
+              - instagram: http://instagram.com/ferrari462
 

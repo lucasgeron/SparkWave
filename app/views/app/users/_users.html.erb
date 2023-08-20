@@ -7,7 +7,6 @@
             <%= App::User.human_attribute_name(attribute) %>
           </th>
         <% end %>
-        <th scope="col" class="p-4 text-center"></th>
       </tr>
     </thead>
     <tbody>
@@ -27,13 +26,7 @@
             <td class="p-2">
               <%= user.finished ? user.duration : time_ago_in_words( user.updated_at) %>
             </td>
-            <td class="p-2">
-              
-            <%= button_to app_user_path(user), method: :patch, form_class: "", class:'btn-secondary flex-none', params: { app_user: { finished: true } } do %>
-              <%= icon('fa-solid','check',class:'-mx-1') %>
-            <%end unless user.finished %>
             
-            </td>
           </tr>
 
         </div>
