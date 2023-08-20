@@ -77,9 +77,12 @@
           <li>
             <a href="#about" data-controller="scroll-to" data-navigation-target='about_link' data-scroll-to-offset-value="55" class="nav-link"><%= t('views.site.navbar.about') %></a>
           </li>
-          <li>
-            <a href="#services" data-controller="scroll-to" data-navigation-target='services_link' data-scroll-to-offset-value="110" class="nav-link"><%= t('views.site.navbar.services') %></a>
-          </li>
+
+          <% if false %>
+            <li>
+              <a href="#services" data-controller="scroll-to" data-navigation-target='services_link' data-scroll-to-offset-value="110" class="nav-link"><%= t('views.site.navbar.services') %></a>
+            </li>
+          <% end %>
           <li>
             <a href="#faq" data-controller="scroll-to" data-navigation-target='faq_link' data-scroll-to-offset-value="110" class="nav-link"><%= t('views.site.navbar.faq') %></a>
           </li>

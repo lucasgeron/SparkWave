@@ -41,6 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_19_173858) do
 
   create_table "app_users", force: :cascade do |t|
     t.boolean "finished"
+    t.string "reference"
     t.bigint "queue_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

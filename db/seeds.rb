@@ -17,7 +17,10 @@ end
   end
 
   100.times do
-    p App::User.create(queue_id: App::Queue.all.sample.id, finished: Faker::Boolean.boolean, reference: Faker::Alphanumeric.alphanumeric(number: 5, min_alpha: 2, min_numeric: 3) )
+    p App::User.create(queue_id: App::Queue.all.sample.id, 
+                        finished: Faker::Boolean.boolean, 
+                        reference:Faker::Alphanumeric.alphanumeric(number: 5, min_alpha: 2, min_numeric: 3),
+                        updated_at: rand(1..60).minutes.after )
   end
   
 end

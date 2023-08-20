@@ -1,12 +1,23 @@
 <div class="space-y-4">
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <% %i[name city address phone category token].each do |attr| %>
+    <% %i[name city address phone ].each do |attr| %>
       <div class="">
         <p class=""><%= App::HealthUnit.human_attribute_name(attr)%></p>
         <p class="detail-input"><%= app_health_unit[attr]  %></p>
       </div>
     <%end%>
+     
+      <div class="">
+        <p class=""><%= App::HealthUnit.human_attribute_name('category')%></p>
+        <p class="detail-input"><%= t("constants.app/health_unit.#{app_health_unit.category}") %></p>
+      </div>
+  
+      <div class="">
+        <p class=""><%= App::HealthUnit.human_attribute_name('token')%></p>
+        <p class="detail-input bg-red-600 dark:bg-red-600 text-white"><%= app_health_unit.token  %></p>
+      </div>
+  
   </div>
 
   <% if app_health_unit.queues.any? %>

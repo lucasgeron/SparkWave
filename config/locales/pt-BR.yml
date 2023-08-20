@@ -41,6 +41,11 @@ pt-BR:
         category: Categoria 
       app/health_insurance:
         name: Nome
+      app/user:
+        reference: Referência
+        created_at: Entrada
+        updated_at: Saída
+        finished: Duração
 
       contactform:
         email: Teste OK
@@ -68,6 +73,7 @@ pt-BR:
       priority: Prioritária 
       regular: Normal 
       pediatric : Pediatria
+
         
   
   date:
